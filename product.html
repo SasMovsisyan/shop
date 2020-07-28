@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+
+    <title>Product Page</title>
+  </head>
+  <body>
+    <header class="header">
+       <div class="container">
+         <div class="row py-2">
+           <div class="col-3 d-none d-lg-block">
+             Welcome to electronic shop
+           </div>  
+           <div class="col-3 d-none d-lg-block">  
+            Tel.:12397450
+           </div> 
+           <div class="col-6 col-lg-2 ">
+            <select class="custom-select">
+               <option selected>ENG</option>
+                 <option value="1">RU</option>
+                  <option value="2">ARM</option>
+                </select>        
+              </div>
+           <div class="col-6 col-lg-2 ">
+            <select class="custom-select">
+               <option selected>$</option>
+                 <option value="1">֏</option>
+                  <option value="2">₽</option>
+                </select>
+              </div>
+              <div class="col-2 d-none d-lg-block">
+                <button type="button" class="btn btn-danger">
+                  Wishlist <span class="badge badge-light">5</span>
+                </button>
+              </div>
+           </div>
+           <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark">
+             <div class="col-5">  
+              <a class="navbar-brand" href="index.html"><img src="data:image/png;base64,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" width="150" height="50"  ></a>
+          </div> 
+  </button>
+   <div class="col-5 d-none d-lg-block">
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      <button type="button" class="btn btn-outline-danger">Search</button>
+    </form>
+     </div> 
+<div class="dropdown col-4 col-lg-2">
+   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   My account
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#"data-toggle="modal" data-target="#login">
+ Login
+</button></a>
+    <a class="dropdown-item" href="#"data-toggle="modal" data-target="#Register">
+  Register
+</button></a>
+    <a class="dropdown-item" href="#">My Orders</a>
+    <a class="dropdown-item" href="#">Account Settings</a>
+  </div>
+</div>   
+</nav>
+<nav class="navbar navbar navbar-light" style="background-color: #e3f2fd;">
+  <div class="dropdown ">
+  <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Playstation
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="shop.html">PS4</a>
+    <a class="dropdown-item" href="#">PS5</a>
+    <a class="dropdown-item" href="#">PS3</a>
+  </div>
+</div>
+ <div class="dropdown ">
+  <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   Apple
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Iphones</a>
+    <a class="dropdown-item" href="#">Airpods</a>
+    <a class="dropdown-item" href="#">Earpods</a>
+  </div>
+</div>
+   <div class="dropdown ">
+  <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Mi
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">MiWatch</a>
+    <a class="dropdown-item" href="#">Xiaomi Phones</a>
+    <a class="dropdown-item" href="#">More...</a>
+  </div>
+</div>
+   <div class="dropdown ">
+  <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Samsung
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Phones</a>
+    <a class="dropdown-item" href="#">Ear Buds</a>
+    <a class="dropdown-item" href="#">Freezers</a>
+  </div>
+</div>
+   <div class="dropdown ">
+  <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Windows
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Phones</a>
+  </div>
+</div>
+ <div class="dropdown ">
+  <button class="btn " type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Computers
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#">Mac</a>
+    <a class="dropdown-item" href="#">Samsung</a>
+    <a class="dropdown-item" href="#">Toshiba</a>
+  </div>
+</div>
+</nav>
+</header>
+
+<main class="main py-4">
+  <div class="container d-none d-sm-block">
+<div class="row">
+  <div class="alert alert-secondary col p-2 bd-highlight" role="alert">
+  <a href="index.html">Daily Deals</a>/<a href="shop.html">Playstations</a>/<a href="product.html">PS4</a>
+</div>
+<div class="d-flex align-items-center pl-3 pr-1">
+<h6>Soft By:</h6>
+</div>
+<div class="form-row col-auto">
+    <div class="my-1">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected="">Price</option>
+        <option value="1">Low-high</option>
+        <option value="2">High-low</option>
+        <option value="3">Random</option>
+      </select>
+    </div>
+</div>
+</div>
+</div>
+
+  <div class="container">
+    <h1>Ps4</h1>
+    <div class="row">
+      <div class="col-6">
+        <div class="row">
+          <div class="col-3 d-none d-sm-block">
+            <a data-fancybox="gallery" href="https://psmedia.playstation.com/is/image/psmedia/ps4-overview-screen-02-eu-06sep16?$MediaCarousel_Original$"><img src="https://psmedia.playstation.com/is/image/psmedia/ps4-overview-screen-02-eu-06sep16?$MediaCarousel_Original$" class="img-fluid"></a>
+            <a data-fancybox="gallery" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXabkHKNxd7KR5AloZBWWkhXNwYZg8UA29Wg&usqp=CAU"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQXabkHKNxd7KR5AloZBWWkhXNwYZg8UA29Wg&usqp=CAU" class="img-fluid"></a>
+            <a data-fancybox="gallery" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLx6XM4_H5TjcVMpxDc_YFXeUcP6J00teiZg&usqp=CAU"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRLx6XM4_H5TjcVMpxDc_YFXeUcP6J00teiZg&usqp=CAU" class="img-fluid"></a>
+            <a data-fancybox="gallery" href="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR2oRmYV0jHAlSe34H-5HWiR_xjFj6ftnVKBw&usqp=CAU"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcR2oRmYV0jHAlSe34H-5HWiR_xjFj6ftnVKBw&usqp=CAU" class="img-fluid"></a>
+
+          </div>
+          <div class="col-9">
+            <a data-fancybox="gallery" href="https://psmedia.playstation.com/is/image/psmedia/ps4-overview-screen-02-eu-06sep16?$MediaCarousel_Original$"><img src="https://psmedia.playstation.com/is/image/psmedia/ps4-overview-screen-02-eu-06sep16?$MediaCarousel_Original$" class="img-fluid"></a>
+          </div>         
+        </div>
+      </div>
+      <div class="col-6">
+        <h2>1000$</h2> 
+        <div class="container">
+          <div class="row">
+         <div class="form-row col-auto">
+    <div class="my-1">
+      <label class="mr-sm-2 sr-only" for="inlineFormCustomSelect">Preference</label>
+      <select class="custom-select mr-sm-2" id="inlineFormCustomSelect">
+        <option selected="">Collor</option>
+        <option value="1">Black</option>
+        <option value="2">White</option>
+        <option value="3">Gold</option>
+      </select>
+    </div>
+</div>
+<button type="button" class="btn btn-primary">Add To Cart</button>
+</div>
+</div>
+<h6>System</h6> 
+
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline1" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline1">PS4 Slim</label>
+</div>
+<div class="custom-control custom-radio custom-control-inline">
+  <input type="radio" id="customRadioInline2" name="customRadioInline1" class="custom-control-input">
+  <label class="custom-control-label" for="customRadioInline2">PS4 Pro</label>
+</div>
+
+<h6>Complect</h6>
+
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch1">
+  <label class="custom-control-label" for="customSwitch1">PS headsets</label>
+</div>
+
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">PS camera</label>
+</div>
+
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch3">
+  <label class="custom-control-label" for="customSwitch3">+3 Disks Of Games</label>
+</div>
+
+</div>
+
+<div class="container py-4">
+  <div class=" d-flex justify-content-center py-4" role="alert">
+    <h3>You May Also Like</h3>
+  </div>
+    <div class="container py-1 ">
+  <div class="row d-flex justify-content-around">
+  <div class="card" style="width: 12rem;">
+  <img src="https://www.techinn.com/f/13734/137343674/sony-ps4-pro-1-tb.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Ps4</h5>
+    <p class="card-text">Buy Ps4 and get ps4 complect.</p>
+    <a href="product.html" class="btn btn-primary">Buy</a>
+  </div>
+</div>
+
+<div class="card" style="width: 12rem;">
+  <img src="https://www.techinn.com/f/13734/137343674/sony-ps4-pro-1-tb.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Ps4</h5>
+    <p class="card-text">Buy Ps4 and get ps4 complect.</p>
+    <a href="product.html" class="btn btn-primary">Buy</a>
+  </div>
+</div>
+
+<div class="card" style="width: 12rem;">
+  <img src="https://www.techinn.com/f/13734/137343674/sony-ps4-pro-1-tb.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Ps4</h5>
+    <p class="card-text">Buy Ps4 and get ps4 complect.</p>
+    <a href="product.html" class="btn btn-primary">Buy</a>
+  </div>
+</div>
+
+<div class="card" style="width: 12rem;">
+  <img src="https://www.techinn.com/f/13734/137343674/sony-ps4-pro-1-tb.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Ps4</h5>
+    <p class="card-text">Buy Ps4 and get ps4 complect.</p>
+    <a href="product.html" class="btn btn-primary">Buy</a>
+  </div>
+</div>
+
+<div class="card" style="width: 12rem;">
+  <img src="https://www.techinn.com/f/13734/137343674/sony-ps4-pro-1-tb.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Ps4</h5>
+    <p class="card-text">Buy Ps4 and get ps4 complect.</p>
+    <a href="product.html" class="btn btn-primary">Buy</a>
+  </div>
+</div>
+
+</div>
+   </div>
+</div>
+
+
+</main>
+
+
+
+
+<footer class="container">
+    <div class="row">
+      <a href="#"
+        class="list-group-item list-group-item-action text-uppercase font-weight-bold text-center col-lg-3 col-sm-12">
+        Contact us
+      </a>
+      <a href="#"
+        class="list-group-item list-group-item-action text-uppercase font-weight-bold text-center col-lg-3 col-sm-12">
+        live chat
+      </a>
+      <a href="#"
+        class="list-group-item list-group-item-action text-uppercase font-weight-bold text-center col-lg-3 col-sm-12">
+        Shiping
+      </a><a href="#"
+        class="list-group-item list-group-item-action text-uppercase font-weight-bold text-center col-lg-3 col-sm-12">
+        Term & Conditions
+      </a>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg d-none d-lg-block col pr-0 border">
+        <ul class="list-group">
+          <h5 class=""> Group 1</h5>
+          <a href="#" class="action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+        </ul>
+
+      </div>
+      <div class="col-lg d-none d-lg-block border">
+        <ul class="list-group">
+          <h5 class=""> Group 2</h5>
+          <a href="#" class="action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+        </ul>
+
+
+      </div>
+      <div class="col-lg d-none d-lg-block  border">
+        <ul class="list-group">
+          <h5 class=""> Group 3</h5>
+          <a href="#" class="action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+        </ul>
+
+      </div>
+      <div class="col-lg d-none d-lg-block  border">
+        <ul class="list-group">
+          <h5 class=""> Group 4</h5>
+          <a href="#" class="action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+        </ul>
+
+      </div>
+      <div class="col-lg d-none d-lg-block border">
+        <ul class="list-group">
+          <h5 class="">Group 5</h5>
+          <a href="#" class="action text-decoration-none text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+          <a href="#" class="=action text-decoration-none  text-secondary">link 1</a>
+        </ul>
+
+      </div>
+    </div>
+<nav class="row navbar navbar-secondary bg-secondary">
+            <div class="d-flex align-items-baseline mx-3">
+             <img src="https://image.flaticon.com/icons/svg/889/889102.svg" class="px-1" width="30px">
+             <img src="https://image.flaticon.com/icons/svg/1384/1384063.svg" class="px-1" width="30px">
+             <img src="https://image.flaticon.com/icons/svg/2965/2965363.svg" class="px-1" width="30px">
+             <img src="https://image.flaticon.com/icons/svg/732/732200.svg" class="px-1" width="30px">
+           </div>
+           <h5>© SasMovsisyan</h5>
+         </nav>
+      </foote
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+
+     <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+  </body>
+</html>
